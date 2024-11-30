@@ -87,13 +87,14 @@ def main(input_path):
         / f"judgment/Evraz/agent_as_a_judge/gray_box"
     )
     
+    if not workspace_dir.exists():
+        workspace_dir.mkdir(parents=True)
+
     if judge_dir.exists():
         shutil.rmtree(judge_dir)
-
-    if (workspace_dir / language).exists():
-        shutil.rmtree(workspace_dir / language)
-        
-    # input_path = Path(input_path)
+    
+    if workspace_dir.exists():
+        shutil.rmtree(workspace_dir)
     
     shutil.copytree(input_path, workspace_dir / language)
     print(workspace_dir / language)
