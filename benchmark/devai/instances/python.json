@@ -1,0 +1,145 @@
+{
+    "name": "Стандарты Python-проекта",
+    "query": "Разработайте Python-проект в соответствии с указанными руководящими принципами.",
+    "tags": [
+        "Python",
+        "Структура проекта",
+        "Лучшие практики"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "Проект должен использовать структуру монорепозитория.",
+            "category": "Структура проекта",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "Корневая директория должна содержать файлы .gitignore, .editorconfig и .gitattributes.",
+            "category": "Структура проекта",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "Файлы для развертывания должны храниться в папке 'deployment' и соответствовать стандартам CI/CD.",
+            "category": "Развертывание",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "Документация должна быть сохранена в папке 'docs' и включать UML-диаграммы (use case, схема базы данных, развертывание и компоненты).",
+            "category": "Документация",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [],
+            "criteria": "Swagger-документация должна автоматически генерироваться через конечную точку на бэкенде.",
+            "category": "Документация API",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [],
+            "criteria": "Каталог 'components' должен разделять фронтенд и бэкенд, а бэкенд должен соответствовать структуре стандартного Python-пакета.",
+            "category": "Архитектура",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [],
+            "criteria": "Корневая папка бэкенда должна быть помечена как sources_root в IDE.",
+            "category": "Среда разработки",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [],
+            "criteria": "Проект должен использовать Python 3.7 и соответствовать указанным зависимостям и версиям пакетов. Используемый стек включает:\n\n- **Основные библиотеки проекта:**\n  - evraz-classic-app-layer\n  - evraz-classic-aspects\n  - evraz-classic-components\n  - evraz-classic-http-api\n  - evraz-classic-http-auth\n  - evraz-classic-messaging\n  - evraz-classic-messaging-kombu\n  - evraz-classic-sql-storage\n  - Использовать самые свежие версии.\n\n- **Библиотеки для разработки:**\n  - falcon~=3.0.0\n  - gunicorn~=20.0.0\n  - gevent~=21.1.0\n  - attrs~=21.2.0\n  - sqlalchemy~=1.4.0\n  - alembic~=1.7.0\n  - kafka-python~=2.0.0\n  - click~=7.1.0 (CLI)\n  - numpy~=1.21.0\n  - pandas~=1.3.0\n  - openpyxl~=3.0.0\n  - pydantic~=1.8.0\n  - pymssql~=2.2.0\n  - cx-oracle~=8.2.0\n  - kombu~=5.1.0\n  - psycopg2~=2.9.0\n  - PyJWT~=2.0.0\n  - python-json-logger~=2.0.0\n  - requests~=2.27.0\n  - plotly~=5.5.0\n  - pytest~=6.2.0\n  - pytest-cov~=2.12.0\n  - isort~=5.10.0\n  - yapf~=0.32.0\n  - toml~=0.10.2\n  - docxtpl~=0.16.4 (используется для работы с docx как шаблона jinja2).\n\n",
+            "category": "Код",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 8,
+            "prerequisites": [],
+            "criteria": "Модели SQLAlchemy должны использовать naming_convention в Metadata, а все таблицы должны быть в snake_case.",
+            "category": "База данных",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 9,
+            "prerequisites": [],
+            "criteria": "Бизнес-логика должна находиться в слое приложения, а валидация и ошибки описаны на уровне сервисов.",
+            "category": "Бизнес-логика",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 10,
+            "prerequisites": [],
+            "criteria": "Тесты должны включать юнит-тесты и интеграционные тесты, с приоритетом на юнит-тесты. Интеграционные тесты должны использовать SQLite в памяти. В каталогах нужно отразить структуру проекта. Имена файлам давать по именам модулей или классов.",
+            "category": "Код",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 11,
+            "prerequisites": [],
+            "criteria": "Все временные данные должны храниться в формате UTC (naive) в базе данных и отправляться на фронтенд в формате UTC с указанием часового пояса.",
+            "category": "Работа с временем",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 12,
+            "prerequisites": [],
+            "criteria": "Логирование должно использовать стандартный модуль logging с указанным форматом и поддерживать опционально формат JSON.",
+            "category": "Логирование",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 13,
+            "prerequisites": [],
+            "criteria": "Аутентификация должна использовать JWT-токены, декодироваться с помощью PyJWT, а все данные пользователя извлекаться из токена.",
+            "category": "Аутентификация",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 14,
+            "prerequisites": [],
+            "criteria": "Websockets должны использовать RabbitMQ с Stomp over WS для push-уведомлений.",
+            "category": "Websockets",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 15,
+            "prerequisites": [],
+            "criteria": "Проект должен строго соответствовать указанной структуре директорий. \n\n-- **Корневая директория**:\n  - Файлы: `.gitignore`, `.editorconfig`, `.gitattributes`, `README.md`\n  - Папки: `deployment`, `docs`, `components`\n\n- **deployment/**:\n  - Содержит конфигурации CI/CD и скрипты для развертывания.\n\n- **docs/**:\n  - Содержит документацию проекта, включая диаграммы и описание бизнес-процессов.\n\n- **components/**:\n  - Разделяет фронтенд и бэкенд компоненты.\n  - **frontend/**: Файлы, относящиеся к фронтенду.\n  - **demo_project_backend/**:\n    - **demo_project/**:\n      - **adapters/**:\n        - **api/**:\n          - Файлы: `__init__.py`, `app.py`, `controllers.py`, `join_points.py`, `settings.py`\n        - **app_database/**:\n          - Файлы: `__init__.py`, `mapping.py`, `settings.py`, `tables.py`\n          - Папки:\n            - **alembic/**:\n              - Файлы: `__init__.py`, `env.py`, `script.py.mako`\n              - Подпапки: `migrations`\n      - **application/**:\n        - **etl/**:\n          - Файлы: `__init__.py`, `constants.py`, `dataclasses.py`, `interfaces.py`, `services.py`\n        - **mills_planner/**:\n          - Файлы: `__init__.py`, `constants.py`, `dataclasses.py`, `events.py`, `interfaces.py`\n          - Подпапки: `services`\n      - **composites/**:\n        - Файлы: `__init__.py`, `alembic_runner.py`, `api.py`, `cli.py`, `etl.py`, `model.py`, `realtime_data.py`\n    - Файлы: `pyproject.toml`, `setup.py`, `__init__.py`, `README.md`\n\n- **tests/**:\n  - Файлы: `__init__.py`\n  - **unit/**: Юнит-тесты.\n  - **integration/**:\n    - **adapters/app_storage/**:\n      - Файлы: `__init__.py`, `conftest.py`\n      - Подпапки: `data_access`, `etl_data_access`, `repositories`\n\nПравильная структура директории должна быть проверена, и все файлы и папки должны соответствовать указанным путям.",
+            "category": "Структура проекта",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 16,
+            "prerequisites": [],
+            "criteria": "Код пишется по PEP8, docstrings по PEP256, 257.",
+            "category": "Код",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "Убедитесь, что классы и методы модульные и легко расширяемые.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "Обеспечьте высокий охват кода автоматическими тестами (например, 90% или выше).",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": false
+}
