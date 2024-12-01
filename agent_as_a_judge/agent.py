@@ -340,8 +340,11 @@ class JudgeAgent:
         return total_llm_stats, total_time
 
     def construct_graph(self):
-        filepaths = self.aaaj_graph.list_code_files([str(self.workspace)])
+        print('self.workspace', self.workspace)
+        filepaths = self.aaaj_graph.list_code_files([str(self.workspace) + '/'])
+        print('filepaths', filepaths)
         tags, graph = self.aaaj_graph.build(filepaths) if filepaths else (None, None)
+        print(tags)
         self._save_graph_and_tags(graph, tags)
         self._save_file_structure()
 

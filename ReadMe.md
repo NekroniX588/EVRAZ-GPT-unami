@@ -2,7 +2,15 @@
 
 # Запуск
 
-## Установка библиотек
+## Запуск LLM
+
+В качестве ЛЛМ мы использовали кантизованную до fp8 [Qwen/Qwen2.5-Coder-32B-Instruct](/guides/content/editing-an-existing-page)
+
+Для её запуска использова `SGLang`
+
+
+
+## Установка библиотек для 
 
 ```
 conda create -n aaaj_evraz python=3.11

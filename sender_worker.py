@@ -55,6 +55,6 @@ def worker():
                 continue
         else:
             logger.info("No tasks found")
-            time.sleep(10)
+            time.sleep(2)
 
 worker()

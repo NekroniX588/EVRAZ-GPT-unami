@@ -820,6 +820,7 @@ class DevGraph:
         include_all = self.include_dirs is None
         
         for root, dirs, files in os.walk(directory):
+            print(files)
             dirs[:] = [
                 d
                 for d in dirs
@@ -827,13 +828,13 @@ class DevGraph:
                     excluded in os.path.basename(d) for excluded in self.exclude_dirs
                 )
             ]
-            if include_all or any(included in root for included in self.include_dirs):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    if not file.startswith(".") and not any(
-                        excluded_file in file for excluded_file in self.exclude_files
-                    ):
-                        main_files.append(file_path)
+            # if include_all or any(included in root for included in self.include_dirs):
+            for file in files:
+                file_path = os.path.join(root, file)
+                if not file.startswith(".") and not any(
+                    excluded_file in file for excluded_file in self.exclude_files
+                ):
+                    main_files.append(file_path)
 
         return main_files
 

@@ -42,6 +42,7 @@ def worker():
             try:
                 result = mock_work_for_task(path_to_project)  # TODO: Implement real work instead of mock
                 write_result(task_id, result)
+                time.sleep(10)
             except Exception as e:
                 logger.error(f"Error while processing task {task_id}. Error: {e}. Traceback {traceback.format_exc()}")
                 update_task_status_by_id(task_id, TaskStatuses.FAILED)
